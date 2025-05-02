@@ -34,8 +34,7 @@ This guide will help you set up your system for the Flexe Glove project. It cove
   mkdir <directory_name>
 - View file contents:
   cat <file_name>
-- My favourite commands :
-  cowsay , fortune , sl 
+> My favourite commands :  cowsay , fortune , sl 
   I urge to find more cool commands and tell me (I find these really cool!!)
 
 ## ROS 2 Humble Desktop Installation (on Ubuntu 22.04)
@@ -64,9 +63,8 @@ These are the resources for learning the basics of STM32. We will be using the B
 
 We will be downloading Fusion 360 in macOS/Windows itself since it is not supported in Linux. Then we will be using add-ins to export our CAD files to URDF.
 
-The steps to convert our file to URDF will be conveyed later—you don’t need to download any special software for that now.
-
-Please log in to Fusion 360 using your IITK email, just like you would have done for TA111 with AutoCAD.
+- The steps to convert our file to URDF will be conveyed later—you don’t need to download any special software for that now.
+- Please log in to Fusion 360 using your IITK email, just like you would have done for TA111 with AutoCAD.
 
 ## Pure Data
 
@@ -75,4 +73,4 @@ This will be used for final song conversion, so have fun playing with it wheneve
 Look up MIDI control in Pure Data using Python if you want to learn more:
 [https://puredata.info/](https://puredata.info/)
 
-This setup ensures your system is ready for all development aspects of the Flexe Glove project.
+> This setup ensures your system is ready for all development aspects of the Flexe Glove project.
