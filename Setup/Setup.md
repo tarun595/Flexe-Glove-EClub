@@ -1,6 +1,6 @@
 # Setup Instructions
 
-This guide will help you set up your system for the Flexe Glove project. It covers how to dual boot Ubuntu 22.04 or use a virtual machine, and how to install the necessary tools including ROS2 Humble, STM32CubeIDE, and Fusion 360.
+This guide will help you set up your system for the Flexe Glove project. It covers how to dual boot Ubuntu 22.04 or use a virtual machine, and how to install the necessary tools including ROS2 Humble, STM32CubeIDE, Fusion 360, and Pure Data.
 
 **IMPORTANT: Download Ubuntu 22.04 ONLY. Do NOT download the latest version.**
 
@@ -10,17 +10,7 @@ This guide will help you set up your system for the Flexe Glove project. It cove
 2. **Create a bootable USB**:
 
    * Download the Ubuntu 22.04 ISO from the [official site](https://ubuntu.com/download/desktop).
-   * Use [Rufus](https://rufus.ie) (Windows) or `Etcher` (Linux/macOS) to create a bootable USB.
-3. **Create a partition**:
-
-   * Use Disk Management in Windows to shrink your primary drive and create unallocated space (\~30GB or more).
-4. **Boot from USB**:
-
-   * Restart your PC and boot into the USB (change boot order in BIOS/UEFI).
-5. **Install Ubuntu**:
-
-   * Choose "Install Ubuntu alongside Windows".
-   * Allocate space for Ubuntu and complete the installation.
+   * Follow the tutorial given [here](https://www.youtube.com/watch?v=GXxTxBPKecQ)
 
 ## Option 2: Use Ubuntu in a Virtual Machine (VM)
 
@@ -28,30 +18,30 @@ This guide will help you set up your system for the Flexe Glove project. It cove
 2. **Download Ubuntu 22.04 ISO**.
 3. **Create a new virtual machine**:
 
-   * Allocate at least 4 GB RAM and 30 GB storage.
+   * Allocate at least 8 GB RAM and 100 GB storage.
    * Mount the ISO and install Ubuntu.
+
+### Basic Linux Shell Commands
+- Update your system:
+  sudo apt update && sudo apt upgrade
+- Install software:
+  sudo apt install <package_name>
+- Navigate directories:
+  cd <directory_name>
+- List files in a directory:
+  ls
+- Make a directory:
+  mkdir <directory_name>
+- View file contents:
+  cat <file_name>
+- My favourite commands :
+  cowsay , fortune , sl 
+  I urge to find more cool commands and tell me (I find these really cool!!)
 
 ## ROS 2 Humble Desktop Installation (on Ubuntu 22.04)
 
-1. **Set up sources**:
-
-   ```bash
-   sudo apt update && sudo apt install curl gnupg lsb-release
-   sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-   ```
-2. **Install ROS 2 Humble Desktop**:
-
-   ```bash
-   sudo apt update
-   sudo apt install ros-humble-desktop
-   ```
-3. **Set up the environment**:
-
-   ```bash
-   echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-   source ~/.bashrc
-   ```
+1. **Set up sources**: Follow this guide [here](https://www.youtube.com/playlist?list=PLLSegLrePWgJudpPUof4-nVFHGkB62Izy) to install and learn ROS2.
+   This is an excellent guide—I myself learnt everything from this. Again, note the version.
 
 ## STM32CubeIDE Installation (Linux)
 
@@ -68,23 +58,21 @@ This guide will help you set up your system for the Flexe Glove project. It cove
    ```
 4. **Follow the GUI prompts** to complete the installation.
 
+These are the resources for learning the basics of STM32. We will be using the Bluepill and NUCLEO boards for our project, so learn the basics for them. Also learn about PWM, ADC with DMA, and using multichannel ADC through FTDI. I will update resources as needed here.
+
 ## Fusion 360 Installation (via Wine or VM)
 
-> Note: Fusion 360 is not officially supported on Linux. Two options:
+We will be downloading Fusion 360 in macOS/Windows itself since it is not supported in Linux. Then we will be using add-ins to export our CAD files to URDF.
 
-### Option 1: Use in Windows (recommended)
+The steps to convert our file to URDF will be conveyed later—you don’t need to download any special software for that now.
 
-* Install Fusion 360 directly in Windows or in a Windows VM.
+Please log in to Fusion 360 using your IITK email, just like you would have done for TA111 with AutoCAD.
 
-### Option 2: Use Wine (experimental)
+## Pure Data
 
-1. **Install Wine and dependencies**:
+This will be used for final song conversion, so have fun playing with it whenever you get bored.
 
-   ```bash
-   sudo apt install wine64 winetricks
-   ```
-2. **Follow [this guide](https://wiki.winehq.org/Fusion_360)** for detailed Fusion 360 installation via Wine.
-
-For best performance and compatibility, we recommend using Fusion 360 on Windows or through a VM.
+Look up MIDI control in Pure Data using Python if you want to learn more:
+[https://puredata.info/](https://puredata.info/)
 
 This setup ensures your system is ready for all development aspects of the Flexe Glove project.
