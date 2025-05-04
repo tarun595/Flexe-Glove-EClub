@@ -59,7 +59,7 @@ This guide will help you set up your system for the Flexe Glove project. It cove
 
 These are the resources for learning the basics of STM32. We will be using the Bluepill and NUCLEO boards for our project, so learn the basics for them. Also learn about PWM, ADC with DMA, and using multichannel ADC through FTDI. I will update resources as needed here.
 
-## Fusion 360 Installation (via Wine or VM)
+## Fusion 360 Installation
 
 We will be downloading Fusion 360 in macOS/Windows itself since it is not supported in Linux. Then we will be using add-ins to export our CAD files to URDF.
 
