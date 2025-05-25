@@ -17,9 +17,9 @@ def draw_square(turt, publisher, side_length=2.0, linear_speed=1.0, angular_spee
         twist.angular.z = 0.0
         publisher.publish(twist)
 
-def draw_spiral(turt, publisher, radius = 0.0, angular_speed=2.5):
+def draw_spiral(turt, publisher, radius = 0.0, final_radius = 5.5, angular_speed=2.5):
     twist = Twist()
-    while radius <=  5.5:
+    while radius <=  final_radius:
         twist.linear.x = radius * angular_speed
         twist.angular.z = angular_speed
         publisher.publish(twist)
