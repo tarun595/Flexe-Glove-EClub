@@ -30,7 +30,7 @@ def draw_spiral(turt, publisher, radius = 0.0, angular_speed=2.5):
     publisher.publish(twist)
 
 rclpy.init()
-turt = Node('square_turtle')
+turt = Node('turtle')
 publisher = turt.create_publisher(Twist, '/turtle1/cmd_vel', 10)
 time.sleep(1)
 draw_square(turt, publisher)
